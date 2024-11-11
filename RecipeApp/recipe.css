@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: Poppins;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+    border-color: hsla(0, 0%, 100%, .2);
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+h1, h2{
+    text-align: center;
+    color: white;
+}
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid red;
+    border-radius: 5px;
+    font-family: Poppins;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+.clear-favorites-btn {
+    padding: 15px 40px;
+    border: none;
+    background: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+        7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+        4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+    position: relative;
+    outline: none;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+clear-favorites-btn:hover {
+    background-color: #f0094a;
+    box-shadow: none;
+}
+.success-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.success-modal {
+    background: #4CAF50;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    text-align: center;
+}
+
+#alreadyInFavoritesModal .success-modal {
+    background: red; 
+}
+
+#clear-favorites-button .success-modal {
+    color: red;
+}
+#success-modal,
+#alreadyInFavoritesModal {
+    display: none;
+}
+
+.recipe-card {
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.favorite-button {
+    margin-top: 10px;
+}
+.view-recipe-button,
+.favorite-button {
+    font-family: Poppins;
+    padding: 15px 40px;
+    border: none;
+    background-color: rgb(255, 27, 0);
+    background-color: linear-gradient(0deg, rgba(255, 27, 0, 1) 0%, rgba(251, 75, 2, 1) 100%);
+    color: #fff;
+    border-radius: 5px;
+    font-family: Poppins;
+    font-weight: 400;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    display: inline-block;
+    box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, .5),
+        7px 7px 20px 0px rgba(0, 0, 0, .1),
+        4px 4px 5px 0px rgba(0, 0, 0, .1);
+    outline: none;
+    margin-left: 0 auto;
+}
+.view-recipe-button:hover,
+.favorite-button:hover {
+    color: #f0094a;
+    background: transparent;
+    box-shadow: none;
+}
+.view-recipe-button:before,
+.view-recipe-button:after,
+.favorite-button:before,
+.favorite-button:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 2px;
+    width: 0;
+    background: #f0094a;
+    box-shadow:
+        -1px -1px 5px 0px #fff,
+        7px 7px 20px 0px #0003,
+        4px 4px 5px 0px #0002;
+    transition: 400ms ease all;
+}
+.view-recipe-button:after,
+.favorite-button:after {
+    right: inherit;
+    top: inherit;
+    left: 0;
+    bottom: 0;
+}
+.view-recipe-button:hover:before,
+.view-recipe-button:hover:after,
+.favorite-button:hover:before,
+.favorite-button:hover:after {
+    width: 100%;
+    transition: 800ms ease all;
+}
+.recipe-card:hover {
+    transform: translateY(-5px); 
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); 
+}
+.recipe-card img {
+    width: 100%;
+    border-radius: 5px;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#instructions {
+    margin-top: 15px;
+    font-size: 16px; 
+}
+
+#instructions ol {
+    padding-left: 20px; 
+}
+
+#instructions li {
+    margin-bottom: 5px; 
+}
+.details-modal {
+    background: #ffffff;
+    border-radius: 0.5em;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    left: 50%;
+    max-width: 90%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 30em;
+    text-align: left;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+}
+.details-modal-close {
+    align-items: center;
+    color: #111827;
+    display: flex;
+    height: 5px;
+    justify-content: center;
+    position: absolute;
+    right: 0;
+    top: 20px;
+    width: 4.5em;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 2px; 
+    z-index: 10;
+}
+.details-modal-title {
+    color: #111827;
+    padding: 1.5em 2em;
+    position: relative;
+    width: calc(100% - 4.5em);
+}
+.details-modal-title h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: normal;
+    color: black;
+}
+.details-modal-content {
+    border-top: 1px solid #e0e0e0;
+    padding: 2em;
+    overflow: auto;
+}
+.details-modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+.details-modal-overlay.active {
+    display: block;
+    z-index: 9999;
+}
+#recipe-image {
+    border-radius: 5px;
+}

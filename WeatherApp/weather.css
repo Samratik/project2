@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 20px;
+    font-family: Poppins;
+    background: linear-gradient(to right, hsl(210, 30%, 20%), hsl(255, 30%, 25%));
+    border-color: hsla(0, 0%, 100%, .2);
+}
+
+input {
+    font-family: Poppins;
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid red;
+    border-radius: 5px;
+}
+
+h1, h2, h3{
+    text-align: center;
+    color:white;
+}
+
+img {
+    width: 70px;
+}
+
+label {
+    color: white;
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+select {
+    border-radius: 5px;
+    padding: 5px;
+    font-family: Poppins;
+}
+
+.weather p {
+    color: white;
+}
+
+
+.weather-app {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#city-search {
+    padding: 10px;
+    width: 80%;
+    margin-bottom: 10px;
+}
+
+.suggestions {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.suggestions li {
+    background: #f0f0f0;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.weather {
+    margin-top: 20px;
+}
+
+#forecast-cards {
+    display: flex;
+    justify-content: space-around;
+}
+
+#forecast-cards .forecast-card {
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+    background-color:antiquewhite ;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-family: Poppins;
+    border-radius: 5px;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color:azure;
+    transition: 0.5ms;
+}

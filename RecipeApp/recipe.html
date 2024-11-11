@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe App</title>
+    <link rel="stylesheet" href="recipe.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Recipe Finder</h1>
+        <input type="text" id="recipe-search" placeholder="What do you want to cook?">
+        <div id="results" class="grid"></div>
+
+        <h2>Your Favourites</h2>
+        <div id="favorites-container" class="grid"></div>
+
+        <!-- Clear Favourites -->
+        <button class="clear-favorites-btn" id="clear-favorites-button" onclick="clearFavorites()">Clear
+            Favourites</button>
+
+        <!-- Success Modal for adding favourites -->
+        <div id="success-modal" class="success-modal-overlay">
+            <div class="success-modal">
+                <p>Recipe successfully added to your Favourites!</p>
+            </div>
+        </div>
+
+        <!-- Already Favourites Modal -->
+        <div id="alreadyInFavoritesModal" class="success-modal-overlay">
+            <div class="success-modal">
+                <p>This recipe is already in your Favourites!</p>
+            </div>
+        </div>
+
+        <!-- Success Modal for clearing favourites -->
+        <div id="clear-favorites-modal" class="success-modal-overlay">
+            <div class="success-modal">
+                <p>All favourites have been cleared!</p>
+            </div>
+        </div>
+
+        <!-- Recipe Details Modal -->
+        <div id="recipe-details" class="details-modal-overlay">
+            <div class="details-modal">
+                <button class="details-modal-close" id="close-recipe-modal">✖</button>
+                <div class="details-modal-title">
+                    <h1 id="recipe-title"></h1>
+                </div>
+                <div class="details-modal-content">
+                    <img id="recipe-image" alt="Recipe Image" style="width: 100%; height: auto;">
+                    <h3>Ingredients:</h3>
+                    <ul id="ingredients-list"></ul>
+                    <h3>Instructions:</h3>
+                    <p id="instructions"></p>
+                    <h3>Nutritional Information:</h3>
+                    <p id="nutrition-info"></p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="recipe.js"></script>
+</body>
+
+</html>

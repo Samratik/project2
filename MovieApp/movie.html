@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movies App</title>
+    <link rel="stylesheet" href="movie.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Movies Finder</h1>
+        <input type="text" id="movie-search" placeholder="What you want to search?">
+        <label for="sort-options">Sort by:</label>
+        <select id="sort-options">
+            <option value="popularity">Popularity</option>
+            <option value="release_date">Release Date</option>
+            <option value="vote_average">Rating</option>
+        </select>
+        <div id="results" class="grid"></div>
+
+        <h2>Your Watchlist</h2>
+        <div id="watchlist-container" class="grid"></div>
+
+        <!-- Clear Watchlist -->
+        <button class="clear-watchlist-btn" id="clear-watchlist-button" onclick="clearWatchlist()">Clear
+            Watchlist</button>
+
+        <!-- Success Modal clearing watchlist -->
+        <div id="clearWatchlistModal" class="success-modal">
+            <div class="success-modal-content">
+                <p>Watchlist has been cleared!</p>
+            </div>
+        </div>
+
+        <!-- Success Modal  -->
+        <div id="success-modal" class="success-modal-overlay">
+            <div class="success-modal">
+                <p>Movie successfully added to your Watchlist!</p>
+            </div>
+        </div>
+
+        <!-- Already Watchlist Modal -->
+        <div id="alreadyInWatchlistModal" class="success-modal-overlay">
+            <div class="success-modal">
+                <p>This movie is already in the watchlist!</p>
+            </div>
+        </div>
+
+        <div id="movie-details" class="details-modal-overlay">
+            <div class="details-modal">
+                <button class="details-modal-close" id="close-modal">✖</button>
+                <div class="details-modal-title">
+                    <h1 id="movie-title"></h1>
+                </div>
+                <div class="details-modal-content">
+                    <img id="movie-poster" alt="Movie Poster" style="width: 100%; height: auto;">
+                    <h3>Synopsis:</h3>
+                    <p id="synopsis"></p>
+                    <h3>Details:</h3>
+                    <p id="rating"></p>
+                    <p id="runtime"></p>
+                    <h3>Cast:</h3>
+                    <ul id="cast-list">
+                        <li id="cast"></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="movie.js"></script>
+</body>
+
+</html>
